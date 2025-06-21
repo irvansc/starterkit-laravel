@@ -28,7 +28,7 @@ Ikuti langkah-langkah berikut untuk menginstal aplikasi ini di komputer Anda:
 1. 🔽 **Clone Repository**
 
     ```bash
-    git clone https://github.com/username/starterkit-laravel.git
+    git clone https://github.com/irvansc/starterkit-laravel.git
     cd starterkit-laravel
     ```
 
@@ -94,11 +94,9 @@ Ikuti langkah-langkah berikut untuk menginstal aplikasi ini di komputer Anda:
 
 Akses aplikasi di [http://localhost:8000](http://localhost:8000)
 
-
 ## 🛡️ Manajemen Role & Permission
 
 Starterkit ini menggunakan [Spatie Laravel Permission](https://spatie.be/docs/laravel-permission/v5/introduction) untuk mengelola role dan permission. Anda dapat menambah/mengubah role & permission melalui seeder, Tinker, atau CRUD yang disediakan.
-
 
 ## 🤝 Kontribusi
 
