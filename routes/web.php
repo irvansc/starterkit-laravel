@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Back\UserController;
+use App\Http\Controllers\Back\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,4 +101,19 @@ Route::middleware(['auth:web'])->group(function () {
     Route::get('/home', [DashboardController::class, 'index'])->name('home');
     Route::resource('users', UserController::class);
     Route::post('/change-profile-picture', [UserController::class, 'changeProfilePicture'])->name('change-profile-picture');
+
+    Route::feeds();
+    Route::prefix('posts')->name('posts.')->group(function () {
+        Route::view('/categories', 'back.pages.posts.categories')->name('categories')->middleware('can:read category');
+        Route::view('/add-post', 'back.pages.posts.add-post')->name('add-post')->middleware('can:create post');
+        Route::post('/create', [PostController::class, 'createPost'])->name('create');
+        Route::view('/all-post', 'back.pages.posts.all_posts')->name('all_posts')
+            ->middleware('can:read post');
+        Route::get('/edit-posts', [PostController::class, 'editPost'])->name('edit-posts')
+            ->middleware('can:update post');
+        Route::post('/update-post', [PostController::class, 'updatePost'])->name('update-post')
+            ->middleware('can:update post');
+        Route::post('/post-upload', [PostController::class, 'contentImage'])->name('post-upload')
+            ->middleware('can:create post');
+    });
 });

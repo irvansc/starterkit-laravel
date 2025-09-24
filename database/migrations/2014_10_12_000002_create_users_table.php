@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->integer('verified')->default(0);
+            $table->boolean('isActive')->default(true);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

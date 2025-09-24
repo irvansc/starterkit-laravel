@@ -45,6 +45,26 @@
                         </ul>
                     </li>
                 @endcan
+
+                <li class="{{ Route::is('posts.*') ? 'mm-active' : '' }}">
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-inbox-full"></i>
+                        <span>Article Management</span>
+                    </a>
+                    <ul class="sub-menu {{ Route::is('posts.*') ? 'mm-collapse mm-show' : '' }}" aria-expanded="false">
+                        @can('create post')
+                        <li><a href="{{ route('posts.add-post') }}">Add post</a></li>
+                        @endcan
+
+                        @can('read post')
+                        <li><a href="{{ route('posts.all_posts') }}">All Post</a></li>
+                        @endcan
+
+                        @can('read category')
+                        <li><a href="{{ route('posts.categories') }}">Categories</a></li>
+                        @endcan
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

@@ -159,7 +159,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
         /*
          * Application Service Providers...
          */

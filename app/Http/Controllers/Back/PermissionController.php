@@ -12,7 +12,7 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.pages.konfigurasi.permission');
     }
 
     /**

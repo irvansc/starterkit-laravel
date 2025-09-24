@@ -3,16 +3,20 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct()
+    {
+        $this->middleware('can:read role');
+    }
+
     public function index()
     {
-        //
+
+        return view('back.pages.konfigurasi.role');
     }
 
     /**
@@ -34,9 +38,11 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Role $role)
     {
-        //
+        $users = $role->users;
+
+        return view('back.pages.konfigurasi.role-show', compact('role', 'users'));
     }
 
     /**

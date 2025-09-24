@@ -51,4 +51,9 @@ class User extends Authenticatable implements MustVerifyEmail
         }
         return asset('/back/images/default.png');
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'author_id', 'id');
+    }
 }

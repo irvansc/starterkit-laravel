@@ -12,7 +12,7 @@ class UserListController extends Controller
      */
     public function index()
     {
-        //
+        return view('back.pages.konfigurasi.user-list');
     }
 
     /**

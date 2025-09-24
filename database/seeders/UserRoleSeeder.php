@@ -25,7 +25,7 @@ class UserRoleSeeder extends Seeder
             echo "✅ Role admin & user dibuat\n";
 
             // Buat Permissions
-            $permissions = ['create role', 'read role', 'update role', 'delete role'];
+            $permissions = ['create role', 'read role', 'update role', 'delete role', 'create post', 'read post', 'update post', 'delete post', 'create category', 'read category', 'update category', 'delete category'];
             foreach ($permissions as $perm) {
                 Permission::firstOrCreate(['name' => $perm]);
             }

@@ -57,7 +57,7 @@
 
 <body>
     <div class="container">
-        <h1>Selamat Datang di Siperpus</h1>
+        <h1>Selamat Datang di Aplikasi Starterkit</h1>
         <a href="{{ route('auth.login') }}" class="btn" target="_blank">Login</a>
         <a href="{{ route('auth.register') }}" class="btn register" target="_blank">Register</a>
     </div>
