@@ -19,31 +19,31 @@
                     </a>
                 </li>
                 @can('read role')
-                    <li class="{{ Route::is('konfigurasi.*') ? 'mm-active' : '' }}">
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="mdi mdi-account-multiple"></i>
-                            <span>User Management</span>
-                        </a>
-                        <ul class="sub-menu {{ Route::is('konfigurasi.*') ? 'mm-collapse mm-show' : '' }}"
-                            aria-expanded="true">
-                            <li class="{{ Route::is('konfigurasi.roles.*') ? 'mm-active' : '' }}">
-                                <a href="{{ route('konfigurasi.roles.index') }}" class=" waves-effect">
-                                    <span>Roles</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('konfigurasi.permissions.index') }}" class=" waves-effect">
-                                    <span>Permissions</span>
-                                </a>
+                <li class="{{ Route::is('konfigurasi.*') ? 'mm-active' : '' }}">
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-account-multiple"></i>
+                        <span>User Management</span>
+                    </a>
+                    <ul class="sub-menu {{ Route::is('konfigurasi.*') ? 'mm-collapse mm-show' : '' }}"
+                        aria-expanded="true">
+                        <li class="{{ Route::is('konfigurasi.roles.*') ? 'mm-active' : '' }}">
+                            <a href="{{ route('konfigurasi.roles.index') }}" class=" waves-effect">
+                                <span>Roles</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('konfigurasi.permissions.index') }}" class=" waves-effect">
+                                <span>Permissions</span>
+                            </a>
 
-                            </li>
-                            <li>
-                                <a href="{{ route('konfigurasi.users-list.index') }}" class=" waves-effect">
-                                    <span>Users</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        </li>
+                        <li>
+                            <a href="{{ route('konfigurasi.users-list.index') }}" class=" waves-effect">
+                                <span>Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 @endcan
 
                 <li class="{{ Route::is('posts.*') ? 'mm-active' : '' }}">
@@ -64,6 +64,13 @@
                         <li><a href="{{ route('posts.categories') }}">Categories</a></li>
                         @endcan
                     </ul>
+                </li>
+                <li>
+                    <a target="_blank" href="{{ route('logs') }}"
+                        class="waves-effect {{ Route::is('logs.*') ? 'mm-active' : '' }}">
+                        <i class="mdi mdi-history"></i>
+                        <span>Logs </span>
+                    </a>
                 </li>
             </ul>
         </div>

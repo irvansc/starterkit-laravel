@@ -116,4 +116,6 @@ Route::middleware(['auth:web'])->group(function () {
         Route::post('/post-upload', [PostController::class, 'contentImage'])->name('post-upload')
             ->middleware('can:create post');
     });
+
+    Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index'])->name('logs');
 });

@@ -161,6 +161,7 @@ return [
          */
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         /*
          * Application Service Providers...
          */
